@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oman Market Insights | Annual Planning - Abu Dhabi DCT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* SONER Logo Animation */
+        @keyframes sonerScan { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes sonerBlip { 0%, 20%, 100% { opacity: 0; } 2%, 15% { opacity: 1; } 3% { transform: scale(1.2); } }
+        
+        /* SONER Logo styles */
+        .soner-logo { display: flex; align-items: center; color: white; font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 300; }
+        .soner-radar { width: 24px; height: 24px; border-radius: 50%; border: 1px solid white; margin: 0 3px; position: relative; background-color: rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .soner-scanner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; animation: sonerScan 4s linear infinite; transform-origin: center; }
+        .soner-scanner::before { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)); transform-origin: bottom left; clip-path: polygon(0 0, 100% 0, 0 100%); }
+        .soner-scanner::after { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)); transform-origin: left center; box-shadow: 0 0 4px rgba(255, 255, 255, 0.8); }
+        .soner-blip { position: absolute; width: 2px; height: 2px; background-color: white; border-radius: 50%; opacity: 0; box-shadow: 0 0 4px white; }
+        .soner-blip:nth-child(1) { top: 25%; left: 30%; animation: sonerBlip 4s 1s infinite; }
+        .soner-blip:nth-child(2) { top: 65%; left: 60%; animation: sonerBlip 4s 2.5s infinite; }
+        .soner-tagline { color: white; font-size: 8px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.5em; margin-left: 10px; opacity: 0.8; }
+
+        :root {
+            --primary: #4285f4;
+            --primary-light: #1a2233;
+            --primary-dark: #8ab4f8;
+            --secondary: #34a853;
+            --secondary-light: #1a2a1e;
+            --warning: #fbbc04;
+            --warning-light: #332a1a;
+            --danger: #ea4335;
+            --danger-light: #331f1e;
+            --gray-100: #1e1e1e;
+            --gray-200: #2d2d2d;
+            --gray-300: #3d3d3d;
+            --gray-400: #4d4d4d;
+            --gray-500: #777777;
+            --gray-600: #a0a0a0;
+            --gray-700: #c0c0c0;
+            --gray-800: #e0e0e0;
+            --gray-900: #f0f0f0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.6);
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-100);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
+            color: white;
+            padding: 32px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIxMDAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBzdG9wLW9wYWNpdHk9Ii4wNSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNGRkYiIHN0b3Atb3BhY2l0eT0iLjAyIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMTQ0MCAyMDBjLTEzMS44LTEyLjktMjY3LjgtMTkuNC00MDgtMTkuNC0xNDAuMiAwLTI3Ni4yIDYuNS00MDggMTkuNFYwaDgxNnYyMDB6IiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .breadcrumb {
+            background-color: var(--gray-100);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        
+        .breadcrumb span {
+            color: var(--gray-600);
+            margin: 0 8px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--gray-800);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--gray-800);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: var(--gray-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        
+        .metric-card {
+            background-color: var(--gray-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .metric-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 0;
+        }
+        
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        
+        .metric-description {
+            margin-bottom: 15px;
+            color: var(--gray-700);
+        }
+        
+        .calculation {
+            background-color: var(--gray-100);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gray-400);
+        }
+        
+        .calculation h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--gray-800);
+        }
+        
+        .interpretation {
+            margin-bottom: 15px;
+        }
+        
+        .interpretation h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--gray-800);
+        }
+        
+        .interpretation ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .business-implications {
+            background-color: var(--secondary-light);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .business-implications h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .business-implications ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .business-implications li {
+            margin-bottom: 8px;
+        }
+        
+        .business-implications li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .example {
+            background-color: var(--warning-light);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--warning);
+        }
+        
+        .example h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #d68000;
+        }
+        
+        .section-intro {
+            background-color: var(--primary-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section-intro p {
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            padding: 20px 0;
+            background-color: var(--gray-200);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            text-align: center;
+            color: var(--gray-600);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .card, .metric-card {
+                padding: 20px;
+            }
+            
+            .metric-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .metric-value {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="https://studiorns.github.io/Annual-Planning/Markets-repository/">Annual Planning Repository</a>
+            <span>></span>
+            <a href="../index.html">Oman Market Dashboard</a>
+            <span>></span>
+            <span>Market Insights</span>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                <div class="soner-logo">
+                    S<div class="soner-radar">
+                        <div class="soner-scanner"></div>
+                        <div class="soner-blip"></div>
+                        <div class="soner-blip"></div>
+                    </div>NER
+                    <span class="soner-tagline">Visual Intelligence</span>
+                </div>
+            </div>
+            <h1>Oman Market Insights & Analysis</h1>
+            <h2 style="font-size: 1.3rem; margin-top: 5px; font-weight: 500; border-bottom: none; padding-bottom: 0; color: white;">Department of Culture and Tourism - Abu Dhabi</h2>
+            <p class="subtitle">Strategic Market Analysis & Performance Indicators</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Introduction</h2>
+            <p>This comprehensive analysis provides detailed insights into the Oman market performance for Abu Dhabi tourism, covering hotel guests, flight searches, and outbound travel patterns. The analysis is designed to support strategic decision-making for annual planning and marketing optimization within the GCC regional context.</p>
+            <p>Each metric is analyzed in terms of:</p>
+            <ul>
+                <li>Performance trends and year-over-year growth within regional market dynamics</li>
+                <li>Seasonal patterns and peak periods aligned with Omani travel behavior</li>
+                <li>Market dynamics and growth drivers in the GCC context</li>
+                <li>Strategic implications leveraging geographic and cultural proximity</li>
+                <li>Comparative analysis with regional outbound travel potential</li>
+            </ul>
+            <p>The insights are organized to align with annual planning requirements, providing actionable intelligence for budget allocation and marketing strategy development.</p>
+        </div>
+        
+        <h2>Market Performance Metrics</h2>
+        <div class="section-intro">
+            <p>The Oman market demonstrates strong regional positioning with Abu Dhabi capturing 2.5% of Oman's total outbound travel market. Despite hotel guest decline (-5.9% YoY), the growing outbound travel market (+20.1% YoY) and increasing flight searches (+18.4% YoY) indicate significant expansion potential within the GCC regional corridor.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Outbound Travel Context</h3>
+                <div class="metric-value">2,792,000 (+20.1% YoY)</div>
+            </div>
+            <p class="metric-description">Total outbound travel from Oman reached 2,792,000 in 2024, growing strongly by 20.1% compared to 2023's 2,325,000 outbound travelers.</p>
+            
+            <div class="calculation">
+                <h5>Market Context Analysis:</h5>
+                <p>Oman outbound travel peaks in July (498,000) and August (359,000), representing summer vacation patterns. Abu Dhabi captures 2.5% of total Oman outbound travel based on hotel guest data (70,580 ÷ 2,792,000).</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Market Opportunity:</h5>
+                <ul>
+                    <li>The strong 20.1% growth in outbound travel indicates a healthy and rapidly expanding Oman travel market with substantial opportunity.</li>
+                    <li>Abu Dhabi's current market share (2.5%) provides solid regional positioning with significant room for expansion.</li>
+                    <li>Summer peaks in outbound travel align with regional patterns, creating focused marketing opportunities during peak demand periods.</li>
+                    <li>Strong GCC market positioning within growing 2.8M annual outbound traveler base indicates excellent expansion potential.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Flight Searches for Abu Dhabi</h3>
+                <div class="metric-value">84,261 (+18.4% YoY)</div>
+            </div>
+            <p class="metric-description">Flight searches from Oman for Abu Dhabi totaled 84,261 in 2024, showing strong growth of 18.4% compared to 2023's 71,117 searches.</p>
+            
+            <div class="calculation">
+                <h5>Search Pattern Analysis:</h5>
+                <p>Peak search activity occurs in July (8,828 searches) and August (8,573 searches), indicating planning for immediate summer travel. The growth represents an additional 13,144 flight searches year-over-year.</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Strategic Implications:</h5>
+                <ul>
+                    <li>Strong search growth (+18.4%) indicates rising travel intent and consideration for Abu Dhabi among Omani travelers.</li>
+                    <li>Summer search peaks (July-August) align with outbound travel patterns, enabling focused campaign timing for maximum impact.</li>
+                    <li>Search growth outpacing hotel guest performance indicates conversion optimization opportunity and potential for improved booking rates.</li>
+                    <li>The substantial search volume (84K) demonstrates strong brand awareness and consideration within the regional market.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Hotel Guests for Abu Dhabi</h3>
+                <div class="metric-value">70,580 (-5.9% YoY)</div>
+            </div>
+            <p class="metric-description">Hotel guests from Oman reached 70,580 in 2024, representing a decline of 5.9% compared to 2023's 74,996 guests.</p>
+            
+            <div class="calculation">
+                <h5>Growth Analysis:</h5>
+                <p>The 5.9% decline represents a decrease of 4,416 hotel guests compared to 2023. Peak performance occurred in August (13,305 guests), followed by July (11,124 guests) and January (8,797 guests).</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Seasonal Patterns:</h5>
+                <ul>
+                    <li><strong>Summer Peak</strong>: August shows strongest performance (13,305 guests)</li>
+                    <li><strong>Sustained Summer</strong>: July demonstrates strong activity (11,124 guests)</li>
+                    <li><strong>Winter Strength</strong>: January shows solid performance (8,797 guests)</li>
+                    <li><strong>Mixed Performance</strong>: Spring months showing variation requiring targeted optimization</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Strategic Implications:</h5>
+                <ul>
+                    <li>Hotel guest decline (-5.9%) contrasts with strong outbound travel growth (+20.1%), indicating competitive pressure or positioning challenges.</li>
+                    <li>Summer seasonality alignment (July-August peaks) provides natural competitive advantages during regional travel periods.</li>
+                    <li>Strong search growth (+18.4%) with declining hotel performance indicates conversion optimization opportunity requiring focused attention.</li>
+                    <li>Solid 2.5% market share provides foundation for strategic recovery and growth initiatives within expanding regional market.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Strategic Recommendations</h2>
+        <div class="section-intro">
+            <p>Based on comprehensive analysis of Oman market performance within the growing regional outbound travel context (2.8M travelers), the following strategic recommendations are designed to reverse hotel guest decline while capitalizing on strong search growth and expanding market opportunity.</p>
+        </div>
+        
+        <div class="example">
+            <h5>Priority Recommendation 1: Conversion Recovery Strategy</h5>
+            <p>Address the disconnect between flight search growth (+18.4%) and hotel guest decline (-5.9%) through targeted conversion optimization campaigns. Focus on booking efficiency during peak July-August search periods.</p>
+        </div>
+        
+        <div class="example">
+            <h5>Priority Recommendation 2: Market Share Defense & Expansion</h5>
+            <p>Strengthen the solid 2.5% market share positioning through defensive campaigns while capitalizing on the expanding outbound market (+20.1% growth) for strategic share expansion.</p>
+        </div>
+        
+        <div class="example">
+            <h5>Priority Recommendation 3: Summer Alignment Optimization</h5>
+            <p>Leverage successful August peak performance (13,305 guests) and aligned summer outbound patterns through focused seasonal campaigns highlighting regional proximity and cultural connections.</p>
+        </div>
+        
+        <div class="example">
+            <h5>Priority Recommendation 4: Regional GCC Positioning</h5>
+            <p>Capitalize on geographic proximity and cultural affinity advantages to strengthen competitive positioning against international destinations within the growing regional travel market.</p>
+        </div>
+        
+        <h2>Seasonality & Campaign Planning Insights</h2>
+        <div class="section-intro">
+            <p>Critical seasonality patterns and performance analysis to optimize campaign timing, budget allocation, and strategic positioning for maximum ROI in the expanding Oman outbound travel market.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Regional GCC Market Positioning</h3>
+                <div class="metric-value">2.5% Market Share</div>
+            </div>
+            <p class="metric-description">Oman represents a solid regional GCC market with 2.5% penetration, indicating strong competitive positioning with significant expansion opportunity within the growing outbound travel corridor.</p>
+            
+            <div class="calculation">
+                <h5>Regional Market Analysis:</h5>
+                <p><strong>Oman Peak Outbound Travel</strong>: July (498,000 travelers) - Summer vacation season<br>
+                <strong>Abu Dhabi Peak Oman Visitors</strong>: August (13,305 guests) - Aligned seasonal pattern<br>
+                <strong>Market Share</strong>: Abu Dhabi captures 2.5% of total Oman outbound travel (70,580 ÷ 2,792,000)<br>
+                <strong>Expansion Potential</strong>: Growing outbound market (+20.1%) creates opportunity for share growth</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Strategic Implications:</h5>
+                <ul>
+                    <li>Solid regional market share (2.5%) indicates strong competitive positioning with significant growth potential in expanding market.</li>
+                    <li>Summer seasonality alignment enables focused marketing during peak demand periods without counter-seasonal positioning challenges.</li>
+                    <li>GCC proximity and cultural affinity create competitive advantages for market share expansion against distant competitors.</li>
+                    <li>Growing outbound market (+20.1%) provides expanding opportunity base for strategic positioning and share capture.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">H1 2025 Performance Trends</h3>
+                <div class="metric-value">Mixed Signals</div>
+            </div>
+            <p class="metric-description">First half 2025 data shows continued challenges requiring strategic intervention, with declining hotel guests (-8.3%) despite positive search trends, indicating conversion optimization priority.</p>
+            
+            <div class="calculation">
+                <h5>H1 2025 vs H1 2024 Performance:</h5>
+                <p><strong>Hotel Guests</strong>: 33,593 vs 36,627 (-8.3% decline)<br>
+                <strong>Flight Searches</strong>: 40,692 vs 37,759 (+7.8% growth)<br>
+                <strong>Outbound Travel</strong>: 1,141,000 vs 1,020,000 (+11.9% growth)<br>
+                <strong>Market Share</strong>: 2.9% in H1 2025 (slight improvement despite guest decline)</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Campaign Planning Implications:</h5>
+                <ul>
+                    <li><strong>Conversion Challenge</strong>: Flight search growth (+7.8%) with hotel guest decline (-8.3%) indicates urgent conversion optimization need.</li>
+                    <li><strong>Market Expansion</strong>: Outbound travel growth (+11.9%) provides expanding base for strategic positioning and recovery efforts.</li>
+                    <li><strong>Competitive Pressure</strong>: Performance gap requires immediate defensive strategies and competitive repositioning initiatives.</li>
+                    <li><strong>H2 Recovery Focus</strong>: Summer season critical for annual performance recovery and momentum building.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Optimal Campaign Timing</h3>
+                <div class="metric-value">Summer Focus Strategy</div>
+            </div>
+            <p class="metric-description">Strategic campaign timing based on seasonal alignment patterns and conversion optimization priorities within the expanding GCC regional market.</p>
+            
+            <div class="calculation">
+                <h5>Campaign Calendar Optimization:</h5>
+                <p><strong>Spring Campaigns (May-Jun)</strong>: Target July-August peak outbound travel → Summer arrival optimization<br>
+                <strong>Summer Campaigns (Jun-Jul)</strong>: Leverage aligned seasonality → August peak conversion<br>
+                <strong>Regional Focus</strong>: GCC proximity enabling tactical campaign flexibility<br>
+                <strong>Peak Performance</strong>: August arrivals (13,305 guests) - Highest monthly performance</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Tactical Recommendations:</h5>
+                <ul>
+                    <li><strong>May-June Campaign Launch</strong>: Target summer outbound peak for aligned seasonal positioning and regional competitive advantage.</li>
+                    <li><strong>Conversion Focus</strong>: Address search-to-booking gap through targeted conversion optimization during peak search periods.</li>
+                    <li><strong>Market Share Defense</strong>: Protect solid 2.5% positioning through competitive campaigns and regional proximity advantages.</li>
+                    <li><strong>GCC Positioning</strong>: Leverage cultural connections and geographic proximity for competitive differentiation.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>2025 Campaign Strategy:</h5>
+                <p><strong>Immediate Priority</strong>: Launch conversion recovery campaigns in Q2 2025 to address search-to-booking disconnect and capitalize on summer peak. <strong>Regional Strategy</strong>: Leverage 2.5% market share and GCC positioning to strengthen competitive advantage within expanding outbound market (+20.1%).</p>
+            </div>
+        </div>
+
+        <h2>Market Outlook</h2>
+        <div class="card">
+            <h3>2025 Projections and Strategic Considerations</h3>
+            <p>Based on H1 2025 performance and expanding outbound market dynamics, the Oman market shows need for urgent conversion optimization while leveraging strong regional positioning (2.5% market share) and growing market opportunity (+20.1% outbound growth) for strategic recovery and expansion.</p>
+            
+            <h4>H1 2025 Key Insights:</h4>
+            <ul>
+                <li><strong>Conversion Challenge</strong>: Flight search growth (+7.8%) with hotel guest decline (-8.3%) requiring immediate optimization intervention</li>
+                <li><strong>Market Expansion</strong>: Outbound travel growth (+11.9%) providing expanding base for strategic positioning and recovery</li>
+                <li><strong>Regional Positioning</strong>: Solid 2.5% market share with GCC proximity advantages creating defensive foundation</li>
+                <li><strong>Seasonal Alignment</strong>: Summer peaks enabling focused campaign timing and competitive positioning</li>
+            </ul>
+            
+            <h4>Strategic Priorities for H2 2025:</h4>
+            <ul>
+                <li><strong>Conversion Recovery</strong>: Address search-to-booking gap through targeted conversion optimization and booking efficiency campaigns</li>
+                <li><strong>Summer Optimization</strong>: Maximize July-August alignment for peak performance recovery and momentum building</li>
+                <li><strong>Market Share Defense</strong>: Protect 2.5% positioning through competitive campaigns and regional advantages</li>
+                <li><strong>GCC Leadership</strong>: Strengthen regional proximity positioning against international competitors</li>
+                <li><strong>Search Momentum</strong>: Build on strong search growth (+18.4%) through enhanced conversion strategies</li>
+                <li><strong>Competitive Repositioning</strong>: Address performance gap through strategic positioning and tactical optimization</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Research & Insights Unit | Strategic Marketing & Communications | Department of Culture and Tourism – Abu Dhabi</p>
+        </div>
+    </div>
+</body>
+</html>
